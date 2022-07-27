@@ -108,12 +108,14 @@ const Home: NextPage = () => {
     battleRewards.push(<>- {reward.replace("%", "")}<span className="inline-block ml-6"></span>{stats[reward]}<br></br></>)
   }
 
+  const prefix = process.env.BASE_PATH || "";
+
   return (
     <div className="px-8">
       <Head>
         <title>Idle Spiral</title>
         <meta name="description" content="For loading Idle Spiral save files" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href={prefix + "/favicon.ico"} />
       </Head>
 
       <main className="min-h-screen py-4 flex flex-1 flex-col justify-center items-center">

@@ -2,8 +2,8 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-  basePath: "/IdleSpiral",
-  assetPrefix: "/IdleSpiral",
+  basePath: process.env.BASE_PATH,
+  assetPrefix: process.env.BASE_PATH,
 }
 
 module.exports = nextConfig
