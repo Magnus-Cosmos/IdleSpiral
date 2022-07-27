@@ -23,7 +23,6 @@ const Home: NextPage = () => {
 
     const key = CryptoJS.enc.Hex.parse(kdf.toString().substring(0, 32));
     const iv = CryptoJS.enc.Hex.parse(kdf.toString().substring(32, 64));
-    console.log(CryptoJS.enc.Base64.parse(text));
     // @ts-ignore: Ignore remaining args for cipherParams
     return CryptoJS.AES.decrypt({ ciphertext: CryptoJS.enc.Base64.parse(text) }, key, { iv: iv }).toString(CryptoJS.enc.Utf8);
   }
@@ -36,7 +35,6 @@ const Home: NextPage = () => {
     }
     const text = await file.text();
     const arr = text.trim().split("#");
-    console.log(arr);
     const saver = JSON.parse(decrypt(arr[0]));
     const save = JSON.parse(decrypt(arr[1]));
     const dto = JSON.parse(decrypt(arr[2]));
